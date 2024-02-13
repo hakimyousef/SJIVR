@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <title>VAR Live Stream</title>
+
+    <style>
+        video {
+            width: 100%;
+            height: 300px;
+            background-color: #666;
+        }
+    </style>
+    <style>
+        #loader {
+            border: 12px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 12px solid #444444;
+            width: 70px;
+            height: 70px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .center {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loader" class="center">
+    </div>
+
+    <!-- <label>Resolution 1: </label> -->
+    <!-- <select id="Resolution">
+            <option value="1">320x240</option>
+            <option value="2">640x480</option>
+            <option value="3">1280x720</option>
+        </select> -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="row" style="margin-left: 1px; text-align: left; background-image: url(img/rep.png); background-repeat: repeat-x;">
+                <img  src="img/logo3.png"> 
+            </div>
+            <div class="row" style="float: right; margin: 10px;">
+                <button id="record">Start Recording</button>
+                <button id="replay">Replay 4</button>
+                <button id="replay1">Replay 1</button>
+                <!-- <button id="download">Download</button> -->
+                <input placeholder="Match Number" id="match">
+            </div>
+        </div>
+        <div class="row">
+            <div id="CAM1" class="col-md-6">
+                <div class="select">
+                    <label>Video source 1: </label>
+                    <select id="videoSource">
+                        <option value="">Select Camera</option>
+                    </select>
+                </div>
+                <video id="video" playsinline autoplay controls poster="img/logo2.png"></video>
+            </div>
+            <div id="CAM2" class="col-md-6">
+                <div class="select">
+                    <label>Video source 2: </label>
+                    <select id="videoSource2">
+                        <option value="">Select Camera</option>
+                        <option value="">Remove</option>
+                    </select>
+                </div>
+                <video id="video2" playsinline autoplay controls poster="img/logo2.png"></video>
+            </div>
+            <div id="CAM3" class="col-md-6">
+                <div class="select">
+                    <label>Video source 3: </label>
+                    <select id="videoSource3">
+                        <option value="">Select Camera</option>
+                        <option value="">Remove</option>
+                    </select>
+                </div>
+                <video id="video3" playsinline autoplay controls poster="img/logo2.png"></video>
+            </div>
+            <div id="CAM4" class="col-md-6">
+                <div class="select">
+                    <label>Video source 4: </label>
+                    <select id="videoSource4">
+                        <option value="">Select Camera</option>
+                        <option value="">Remove</option>
+                    </select>
+                </div>
+                <video id="video4" playsinline autoplay controls poster="img/logo2.png"></video>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <title>VAR Player</title>
+    <style>
+        video {
+            width: 100%;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+        .stage {
+            background: #eee;
+            overflow: hidden;
+            position: relative;
+            margin: 2em;
+        }
+
+        .stage span {
+            font-size: 20px;
+            color: #666;
+            display: block;
+            padding: 2em;
+        }
+    </style>
+</head>
+
+<body onload="SetSources()">
+
+    <div class="container-fluid">
+        <div class="row" style="text-align: center;">
+            <h1>Replay</h1>
+
+            <button data-toggle="tooltip" data-placement="top" title="Play All Videos" id="btnPlay"
+                onclick="PlayAll()"><span class="glyphicon glyphicon-play"></button>
+            <button data-toggle="tooltip" data-placement="top" title="Stop All Videos" onclick="StopAll()"><span
+                    class="glyphicon glyphicon-stop"></span></button>
+            <button data-toggle="tooltip" data-placement="top" title="Move Forward Frame by Frame"
+                onclick="PlayFbF()"><span class="glyphicon glyphicon-forward"></span></button>
+            <button data-toggle="tooltip" data-placement="top" title="Move Backward Frame by Frame"
+                onclick="PlayFbFb()"><span class="glyphicon glyphicon-backward"></span></button>
+            <button data-toggle="tooltip" data-placement="top" title="Play all from begining" onclick="ResetAll()"><span
+                    class="glyphicon glyphicon-step-backward"></button>
+            <button data-toggle="tooltip" data-placement="top" title="Zoom All In" onclick="ZoomAllIn()"><span
+                    class="glyphicon glyphicon-zoom-in"></span></button>
+            <button data-toggle="tooltip" data-placement="top" title="Zoom All Out" onclick="ZoomAllOut()"><span
+                    class="glyphicon glyphicon-zoom-out"></span></button>
+            <!-- &#x2190;
+            &#x2192;
+            &#x2191;
+            &#x2193; -->
+            <button data-toggle="tooltip" data-placement="top" title="Pan Left" onclick="moveleft()"><span
+                    class="glyphicon glyphicon-arrow-left"></span></button>
+            <button data-toggle="tooltip" data-placement="top" title="Pan Right" onclick="moveright()"><span
+                    class="glyphicon glyphicon-arrow-right"></span></button>
+            <button data-toggle="tooltip" data-placement="top" title="Pan Up" onclick="moveup()"><span
+                    class="glyphicon glyphicon-arrow-up"></span></button>
+            <button data-toggle="tooltip" data-placement="top" title="Pan Down" onclick="movedown()"><span
+                    class="glyphicon glyphicon-arrow-down"></span></button>
+            <button data-toggle="tooltip" data-placement="top" title="Rotate All Left" onclick="rotateleft()">
+                &#x21bb;</button>
+            <button data-toggle="tooltip" data-placement="top" title="Rotate All Right"
+                onclick="rotateright()">&#x21ba;</button>
+            <button data-toggle="tooltip" data-placement="top" title="Reset Zoom and Pan" onclick="reset()"> <span
+                    class="glyphicon glyphicon-refresh"></Span></button>
+
+            <br>
+            <button data-toggle="tooltip" data-placement="top" title="Load Camera 1" id="C1" onclick="load('b1')">
+                1</button>
+            <button data-toggle="tooltip" data-placement="top" title="Load Camera 2" id="C2" onclick="load('b2')">
+                2</button>
+            <button data-toggle="tooltip" data-placement="top" title="Load Camera 3" id="C3" onclick="load('b3')">
+                3</button>
+            <button data-toggle="tooltip" data-placement="top" title="Load Camera 4" id="C4" onclick="load('b4')">
+                4</button>
+
+
+            <!-- &#128472; -->
+        </div>
+        <div class="row">
+            <div id="CAM1" class="col-md-12">
+                <div class="stage">
+                    <video id="video1" preload="metadata">
+                        <!-- <source src="CAM1.mp4" type="video/mp4"> -->
+                        Your browser does not support HTML video.
+                    </video>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/player.js"></script>   
+    <script src="js/replay.js"></script>
+</body>
+
+</html>
